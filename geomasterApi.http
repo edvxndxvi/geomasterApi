@@ -1,0 +1,6 @@
+@geomasterApi_HostAddress = http://localhost:5001
+
+GET {{geomasterApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
