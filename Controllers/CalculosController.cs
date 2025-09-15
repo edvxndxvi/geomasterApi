@@ -15,6 +15,13 @@ namespace geomasterApi.Controllers
             _calculadoraService = calculadoraService;
         }
 
+        /// <summary>
+        /// Calcula a área de uma forma geométrica 2D.
+        /// </summary>
+        /// <param name="formaDto">Objeto representando a forma geométrica.</param>
+        /// <returns>Área da forma ou mensagem de erro.</returns>
+        /// <response code="200">Retorna a área calculada.</response>
+        /// <response code="400">Forma não suporta cálculo de área ou erro de processamento.</response>
         [HttpPost("area")]
         public IActionResult CalcularArea([FromBody] FormaDTO formaDto)
         {
@@ -32,6 +39,13 @@ namespace geomasterApi.Controllers
             }
         }
 
+        /// <summary>
+        /// Calcula o perímetro de uma forma geométrica 2D.
+        /// </summary>
+        /// <param name="formaDto">Objeto representando a forma geométrica.</param>
+        /// <returns>Perímetro da forma ou mensagem de erro.</returns>
+        /// <response code="200">Retorna o perímetro calculado.</response>
+        /// <response code="400">Forma não suporta cálculo de perímetro ou erro de processamento.</response>
         [HttpPost("perimetro")]
         public IActionResult CalcularPerimetro([FromBody] FormaDTO formaDto)
         {
@@ -49,6 +63,13 @@ namespace geomasterApi.Controllers
             }
         }
 
+        /// <summary>
+        /// Calcula o volume de uma forma geométrica 3D.
+        /// </summary>
+        /// <param name="formaDto">Objeto representando a forma geométrica.</param>
+        /// <returns>Volume da forma ou mensagem de erro.</returns>
+        /// <response code="200">Retorna o volume calculado.</response>
+        /// <response code="400">Forma não suporta cálculo de volume ou erro de processamento.</response>
         [HttpPost("volume")]
         public IActionResult CalcularVolume([FromBody] FormaDTO formaDto)
         {
@@ -66,6 +87,13 @@ namespace geomasterApi.Controllers
             }
         }
 
+        /// <summary>
+        /// Calcula a área superficial de uma forma geométrica 3D.
+        /// </summary>
+        /// <param name="formaDto">Objeto representando a forma geométrica.</param>
+        /// <returns>Área superficial da forma ou mensagem de erro.</returns>
+        /// <response code="200">Retorna a área superficial calculada.</response>
+        /// <response code="400">Forma não suporta cálculo de área superficial ou erro de processamento.</response>
         [HttpPost("areasuperficial")]
         public IActionResult CalcularAreaSuperficial([FromBody] FormaDTO formaDto)
         {
