@@ -9,6 +9,8 @@ namespace geomasterApi.Models
 
         public Retangulo(double comprimento, double largura) : base(comprimento, largura)
         {
+            this.comprimento = comprimento;
+            this.largura = largura;
         }
 
         public double CalcularArea()
@@ -18,7 +20,8 @@ namespace geomasterApi.Models
 
         public double CalcularPerimetro()
         {
-            return 2 * (comprimento * largura); 
+            return 2 * (comprimento + largura);
+
         }
     }
 }

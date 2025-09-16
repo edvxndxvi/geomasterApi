@@ -8,6 +8,7 @@ namespace geomasterApi.Models
 
         public Circulo(double raio) : base(raio)
         {
+            this.raio = raio;
         }
 
         public double CalcularArea()
