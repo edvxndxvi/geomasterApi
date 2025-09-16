@@ -4,19 +4,19 @@
     {
         public double Largura { get; protected set; }
 
-        public double Altura { get; protected set; }
+        public double Comprimento { get; protected set; }
 
-        protected FormaRetangular(double largura, double altura)
+        protected FormaRetangular(double largura, double comprimento)
         {
-            ValidarDimensoes(largura, altura);
+            ValidarDimensoes(largura, comprimento);
             Largura = largura;
-            Altura = altura;
+            Comprimento = comprimento;
         }
 
-        private static void ValidarDimensoes(double largura, double altura)
+        private static void ValidarDimensoes(double largura, double comprimento)
         {
-            if (largura <= 0 || altura <= 0)
-                throw new ArgumentException("Largura e altura devem ser maiores que zero");
+            if (largura <= 0 || comprimento <= 0)
+                throw new ArgumentException("Largura e comprimento devem ser maiores que zero");
         }
     }
 }

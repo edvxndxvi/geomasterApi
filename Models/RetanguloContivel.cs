@@ -4,7 +4,7 @@ namespace geomasterApi.Models
 {
     public class RetanguloContivel : Retangulo, IFContivel
     {
-        public RetanguloContivel(double largura, double altura) : base(largura, altura) { }
+        public RetanguloContivel(double largura, double comprimento) : base(largura, comprimento) { }
 
         public bool PodeConter(object formaInterna)
         {

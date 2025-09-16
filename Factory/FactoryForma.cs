@@ -40,8 +40,8 @@ namespace geomasterApi.Factory
 
         private object CriarRetangulo(JsonElement props)
         {
-            var (largura, altura) = ValidadorPropriedades.ValidarLarguraAltura(props);
-            return new Retangulo(largura, altura);
+            var (largura, comprimento) = ValidadorPropriedades.ValidarLarguraComprimento(props);
+            return new Retangulo(largura, comprimento);
         }
 
         private object CriarEsfera(JsonElement props)

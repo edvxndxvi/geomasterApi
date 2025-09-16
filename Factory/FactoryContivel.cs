@@ -36,8 +36,8 @@ namespace geomasterApi.Factory
 
         private IFContivel CriarRetanguloContivel(JsonElement propriedades)
         {
-            var (largura, altura) = ValidadorPropriedades.ValidarLarguraAltura(propriedades);
-            return new RetanguloContivel(largura, altura);
+            var (largura, comprimento) = ValidadorPropriedades.ValidarLarguraComprimento(propriedades);
+            return new RetanguloContivel(largura, comprimento);
         }
 
     }

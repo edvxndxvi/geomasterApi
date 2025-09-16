@@ -21,22 +21,22 @@ namespace geomasterApi.Factory
             return raio;
         }
 
-        public static (double largura, double altura) ValidarLarguraAltura(JsonElement propriedades)
+        public static (double largura, double comprimento) ValidarLarguraComprimento(JsonElement propriedades)
         {
-            if (!propriedades.TryGetProperty("comprimento", out var comprimentoElement) ||
-                !comprimentoElement.TryGetDouble(out var comprimento) ||
-                !propriedades.TryGetProperty("altura", out var alturaElement) ||
-                !alturaElement.TryGetDouble(out var altura))
+            if (!propriedades.TryGetProperty("largura", out var larguraElement) ||
+                !larguraElement.TryGetDouble(out var largura) ||
+                !propriedades.TryGetProperty("comprimento", out var comprimentoElement) ||
+                !comprimentoElement.TryGetDouble(out var comprimento))
             {
-                throw new ArgumentException("Propriedades 'comprimento' e 'altura' são obrigatórias e devem ser números válidos");
+                throw new ArgumentException("Propriedades 'comprimento' e 'largura' são obrigatórias e devem ser números válidos");
             }
 
-            if (comprimento <= 0 || altura <= 0)
+            if (comprimento <= 0 || largura <= 0)
             {
-                throw new ArgumentException("Largura e altura devem ser maiores que zero");
+                throw new ArgumentException("Largura e comprimento devem ser maiores que zero");
             }
 
-            return (comprimento, altura);
+            return (comprimento, largura);
         }
     }
 }
