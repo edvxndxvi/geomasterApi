@@ -16,34 +16,12 @@ namespace geomasterApi.Controllers
         }
 
         /// <summary>
-        /// Verifica se uma forma geométrica pode conter outra forma geométrica.
+        /// Determina se uma forma geométrica externa consegue conter outra forma geométrica interna.
         /// </summary>
-        /// <param name="validacaoDto">Objeto contendo as formas externa e interna para validação.</param>
-        /// <returns>Resultado da validação indicando se a forma externa pode conter a forma interna.</returns>
-        /// <remarks>
-        /// Suporta as seguintes combinações de validação:
-        /// - Círculo contendo círculo
-        /// - Círculo contendo retângulo
-        /// - Retângulo contendo círculo
-        /// - Retângulo contendo retângulo
-        /// 
-        /// Exemplo de requisição:
-        /// 
-        ///     {
-        ///         "formaExterna": {
-        ///             "tipo": "circulo",
-        ///             "raio": 10
-        ///         },
-        ///         "formaInterna": {
-        ///             "tipo": "retangulo",
-        ///             "largura": 5,
-        ///             "comprimento": 8
-        ///         }
-        ///     }
-        /// 
-        /// </remarks>
-        /// <response code="200">Retorna o resultado da validação (true se a forma externa pode conter a interna, false caso contrário).</response>
-        /// <response code="400">Erro de processamento ou formas inválidas.</response>
+        /// <param name="validacaoDto">Objeto que contém as informações das formas externa e interna a serem validadas.</param>
+        /// <returns>Um valor booleano indicando se a forma externa pode conter a forma interna.</returns>
+        /// <response code="200">Validação concluída com sucesso. Retorna true se a forma externa pode conter a interna; false caso contrário.</response>
+        /// <response code="400">Solicitação inválida ou erro ao processar as formas fornecidas.</response>
         [HttpPost("forma-contida")]
         [ProducesResponseType(typeof(object), 200)]
         [ProducesResponseType(typeof(string), 400)]
