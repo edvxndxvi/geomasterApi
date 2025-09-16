@@ -2,12 +2,12 @@
 
 namespace geomasterApi.Models
 {
-    public class Esfera : ICalculos3D
+    public class Esfera : FormaCircular, ICalculos3D
     {
         public double raio {  get; set; }
 
-        public Esfera(double raio) { 
-            this.raio = raio;
+        public Esfera(double raio) : base(raio)
+        { 
         }
 
         public double CalcularVolume()

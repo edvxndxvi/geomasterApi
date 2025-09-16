@@ -2,15 +2,13 @@
 
 namespace geomasterApi.Models
 {
-    public class Retangulo : ICalculos2D
+    public class Retangulo : FormaRetangular, ICalculos2D
     {
         public double comprimento { get; set; }
         public double largura { get; set; }
 
-        public Retangulo(double comprimento, double largura)
+        public Retangulo(double comprimento, double largura) : base(comprimento, largura)
         {
-            this.comprimento = comprimento;
-            this.largura = largura;
         }
 
         public double CalcularArea()

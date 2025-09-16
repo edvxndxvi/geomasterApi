@@ -2,13 +2,12 @@
 
 namespace geomasterApi.Models
 {
-    public class Circulo : ICalculos2D
+    public class Circulo : FormaCircular, ICalculos2D 
     {
         public double raio { get; set; }
 
-        public Circulo(double raio)
+        public Circulo(double raio) : base(raio)
         {
-            this.raio = raio;
         }
 
         public double CalcularArea()
