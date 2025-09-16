@@ -33,8 +33,8 @@ namespace geomasterApi.Services
         {
             return forma switch
             {
-                ICalculos3D forma3d => forma3d.CalcularVolume(),
-                _ => throw new InvalidOperationException("A forma não calcula volume")
+                ICalculos3D forma3d => forma3d.CalcularAreaSuperficial(),
+                _ => throw new InvalidOperationException("A forma não calcula area superficial")
             };
 
         }

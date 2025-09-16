@@ -7,7 +7,8 @@ namespace geomasterApi.Models
         public double raio {  get; set; }
 
         public Esfera(double raio) : base(raio)
-        { 
+        {
+            this.raio = raio;
         }
 
         public double CalcularVolume()
